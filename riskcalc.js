@@ -8,5 +8,5 @@ function calcTobacco(value, rr){
 			result+=parseFloat(inputs[i].dataset.rr);
 		}
 	}
-	document.getElementById("tobaccoResult").innerHTML="Tobacco induced risk for oral cancer: "+result;
+	document.getElementById("tobaccoResult").innerHTML="Tobacco induced risk for oral cancer: "+result.toFixed(1);
 }

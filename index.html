@@ -8,29 +8,42 @@
 <!--Import Google Icon Font-->
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
 	rel="stylesheet">
+<link href="main.css" rel="stylesheet">
 <title>Alcohol and Tobacco Combined Cancer Risk Calculator</title>
 </head>
 <body>
 	<h4>Tobacco relative risk</h4>
 	<form id="tobacco-rr">
-		<label> <input name="cigsperday" id="less15" type="radio"
-			class="tobacco" data-rr="5.3"
+		<label> <input name="cigsperday" id="zerocigs" type="radio"
+			class="tobacco" data-rr="0"
+			onchange="calcTobacco(this.value, this.dataset.rr)" /> <span>0
+				per day</span>
+		</label><br /> <label> <input name="cigsperday" id="less15"
+			type="radio" class="tobacco" data-rr="5.3"
 			onchange="calcTobacco(this.value, this.dataset.rr)" /> <span>&lt;
 				15 per day (RR: 5.3)</span>
 		</label><br /> <label> <input name="cigsperday" type="radio"
 			id="more25" class="tobacco" data-rr="14.3"
 			onchange="calcTobacco(this.value, this.dataset.rr)" /> <span>&gt;
 				25 per day (RR: 14.3)</span>
-		</label><br /> <label>
-			<div class="divider"></div> <input name="yearssmoked" type="radio"
+		</label><br />
+		<div class="divider"></div>
+		<label> <input name="yearssmoked" type="radio" id="zeroyears"
+			class="tobacco" data-rr="0"
+			onchange="calcTobacco(this.value, this.dataset.rr)" /> <span>0
+				years</span>
+		</label><br /> <label><input name="yearssmoked" type="radio"
 			id="less30" class="tobacco" data-rr="5.9"
 			onchange="calcTobacco(this.value, this.dataset.rr)" /> <span>&lt;
 				30 years (RR: 5.9)</span>
-		</label><br /> <label> <input type="radio" id="more40"
-			class="tobacco" name="yearssmoked" data-rr="18"
+		</label><br /> <label><input type="radio"
+			id="more40" class="tobacco" name="yearssmoked" data-rr="18"
 			onchange="calcTobacco(this.value, this.dataset.rr)" /> <span>&gt;
-				40 years (RR: 18)</span></label><br /><div class="divider"></div><label> <input type="checkbox"
-			id="17" class="tobacco" name="startingage" data-rr="13.6"
+				40 years (RR: 18)</span>
+		</label><br />
+		<div class="divider"></div>
+		<label> <input type="checkbox" id="17" class="tobacco"
+			name="startingage" data-rr="13.6"
 			onchange="calcTobacco(this.value, this.dataset.rr)" /> <span>started
 				smoking before the age of 17? (RR: 13.6)</span>
 		</label>
@@ -46,6 +59,10 @@
 	</form>
 
 	<h5 id="tobaccoResult">Tobacco induced risk for oral cancer: 0</h5>
+
+	<h5>How much do you drink every day?</h5>
+
+
 
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
