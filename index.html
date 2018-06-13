@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+<!--Import Google Icon Font-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
+<title>Alcohol and Tobacco Combined Cancer Risk Calculator</title>
+</head>
+<body>
+	<h4>Tobacco relative risk</h4>
+	<form id="tobacco-rr">
+		<label> <input name="cigsperday" id="less15" type="radio"
+			class="tobacco" data-rr="5.3"
+			onchange="calcTobacco(this.value, this.dataset.rr)" /> <span>&lt;
+				15 per day (RR: 5.3)</span>
+		</label><br /> <label> <input name="cigsperday" type="radio"
+			id="more25" class="tobacco" data-rr="14.3"
+			onchange="calcTobacco(this.value, this.dataset.rr)" /> <span>&gt;
+				25 per day (RR: 14.3)</span>
+		</label><br /> <label>
+			<div class="divider"></div> <input name="yearssmoked" type="radio"
+			id="less30" class="tobacco" data-rr="5.9"
+			onchange="calcTobacco(this.value, this.dataset.rr)" /> <span>&lt;
+				30 years (RR: 5.9)</span>
+		</label><br /> <label> <input type="radio" id="more40"
+			class="tobacco" name="yearssmoked" data-rr="18"
+			onchange="calcTobacco(this.value, this.dataset.rr)" /> <span>&gt;
+				40 years (RR: 18)</span></label><br /><div class="divider"></div><label> <input type="checkbox"
+			id="17" class="tobacco" name="startingage" data-rr="13.6"
+			onchange="calcTobacco(this.value, this.dataset.rr)" /> <span>started
+				smoking before the age of 17? (RR: 13.6)</span>
+		</label>
+		<p>What do you smoke?</p>
+		<label> <input type="checkbox" id="cigarettes" class="tobacco"
+			name="cigtype" data-rr="11.1"
+			onchange="calcTobacco(this.value, this.dataset.rr)" /> <span>Cigarettes
+				(RR: 11.1)</span>
+		</label><br /> <label> <input type="checkbox" id="pipecigar"
+			class="tobacco" name="cigtype" data-rr="20.7"
+			onchange="calcTobacco(this.value, this.dataset.rr)" /> <span>Pipe/Cigar
+				(RR: 20.7)</span></label><br />
+	</form>
+
+	<h5 id="tobaccoResult">Tobacco induced risk for oral cancer: 0</h5>
+
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+	<script type="text/javascript" src="riskcalc.js"></script>
+</html>
