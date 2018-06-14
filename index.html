@@ -12,6 +12,8 @@
 <title>Alcohol and Tobacco Combined Cancer Risk Calculator</title>
 </head>
 <body>
+	<div class="row">
+	<div class="column">
 	<h5>Tobacco relative risk</h5>
 	<form id="tobacco-rr">
 		<p>How much do you smoke every day?</p>
@@ -60,10 +62,12 @@
 	<h5 id="tobaccoResult">Tobacco induced risk for oral cancer: 0</h5>
 
 	<div class="divider"></div>
+	</div>
+	<div class="column">
 	<h5>Alcohol realtive risk</h5>
 	<form id=alcohol-rr>
 		<span>How many standardized beverages do you drink daily?</span><br />
-		<span><i>Standardized beverages are 1 beer (0.35l), 1 glass of wine (0.15l) or 1 shot glass of 80 proof Alcohol (44ml).</i></i></span><br />
+		<span><i>Standardized beverages are 1 beer (0.35l), 1 glass of wine (0.15l) or 1 shot glass of 80 proof Alcohol (44ml).</i></span><br />
 		<label> <input type="radio" id="two_drinks" name="alcohol"
 			class="alcohol" data-oral="1.75" data-laryngeal="1.38"
 			data-esophageal="1.51" data-liver="1.17" onchange="calcAlcohol()" />
@@ -82,7 +86,9 @@
 	<h5 id="laryngeal">Laryngeal cancer: 0</h5>
 	<h5 id="esophageal">Esophageal cancer: 0</h5>
 	<h5 id="liver">Liver cancer: 0</h5>
-
+	</div>
+	</div>
+	
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script
