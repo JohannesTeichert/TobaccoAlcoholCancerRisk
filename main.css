@@ -1,3 +1,7 @@
 form, body {
 	margin: 1em;
 }
+
+span {
+	margin-right: 3em;
+}
