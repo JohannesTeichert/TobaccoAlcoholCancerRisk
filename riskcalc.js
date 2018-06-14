@@ -11,7 +11,7 @@ function calcTobacco(value, rr){
 			resultTobacco+=parseFloat(inputs[i].dataset.rr);
 		}
 	}
-	document.getElementById("tobaccoResult").innerHTML="Tobacco induced risk for oral cancer: "+resultTobacco.toFixed(1);
+	document.getElementById("tobaccoResult").innerHTML="Tobacco induced risk for oral cancer: "+resultTobacco.toFixed(2);
 	checkCombined();
 }
 
@@ -33,6 +33,6 @@ function calcAlcohol(){
 
 function checkCombined(){
 	if (resultTobacco > 0 && resultAlc > 0){
-		document.getElementById("oral").innerHTML="Oral and pharyngeal cancer: \nCombined risk of "+resultAlc+" x "+resultTobacco+" = "+(resultAlc*resultTobacco).toFixed(2);
+		document.getElementById("oral").innerHTML="Oral and pharyngeal cancer: \nCombined risk of "+resultAlc+" x "+resultTobacco.toFixed(2)+" = "+(resultAlc*resultTobacco).toFixed(2);
 	}
 }
